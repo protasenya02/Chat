@@ -1,17 +1,19 @@
 package com.example.chat.model;
 
-/**
- * Created by rajeevkumarsingh on 24/07/17.
- */
+import java.util.Date;
+
+
 public class ChatMessage {
     private MessageType type;
     private String content;
     private String sender;
+    private String timestamp;
 
     public enum MessageType {
         CHAT,
         JOIN,
-        LEAVE
+        LEAVE,
+        FILE
     }
 
     public MessageType getType() {
@@ -36,5 +38,13 @@ public class ChatMessage {
 
     public void setSender(String sender) {
         this.sender = sender;
+    }
+
+    public void setTimestamp(String timestamp) {
+        this.timestamp = timestamp;
+    }
+
+    public String getTimestamp() {
+        return timestamp;
     }
 }

@@ -14,19 +14,20 @@ import org.springframework.stereotype.Controller;
 @Controller
 public class ChatController {
 
-    @MessageMapping("/chat.sendMessage")             // урл по которому слушает
-    @SendTo("/topic/public")                        // урл на который отправляет
+    @MessageMapping("/chat.sendMessage")             // url по которому слушает
+    @SendTo("/chat/messaging")                       // url на который отправляет
     public ChatMessage sendMessage(@Payload ChatMessage message) {
         return message;
     }
 
     @MessageMapping("/chat.addUser")
-    @SendTo("/topic/public")
+    @SendTo("/chat/messaging")
     public ChatMessage addUser(@Payload ChatMessage message,
         SimpMessageHeaderAccessor headerAccessor) {
-        // Add username in web socket session
         headerAccessor.getSessionAttributes().put("username", message.getSender());
         return message;
     }
+
+
 
 }
