@@ -27,7 +27,4 @@ public class ChatController {
         headerAccessor.getSessionAttributes().put("username", message.getSender());
         return message;
     }
-
-
-
 }
