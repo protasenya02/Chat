@@ -56,6 +56,7 @@ body:before {
 input {
     padding-left: 10px;
     outline: none;
+    border-radius: 8px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -71,6 +72,7 @@ a {
     color: #128ff2;
 }
 
+/* buttons */
 button {
     box-shadow: none;
     border: 1px solid transparent;
@@ -80,7 +82,7 @@ button {
     white-space: nowrap;
     vertical-align: middle;
     padding: 0.6rem 1rem;
-    border-radius: 2px;
+    border-radius: 8px;
     transition: all 0.2s ease-in-out;
     cursor: pointer;
     min-height: 38px;
@@ -98,12 +100,17 @@ button.primary {
     color: #fff;
 }
 
+button.primary:hover {
+    background-color: #ff4743;
+}
+
 button.accent {
     background-color: #ff4743;
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.12);
     color: #fff;
 }
 
+/* username page*/
 #username-page {
     text-align: center;
 }
@@ -111,7 +118,7 @@ button.accent {
 .username-page-container {
     background: #fff;
     box-shadow: 0 1px 11px rgba(0, 0, 0, 0.27);
-    border-radius: 2px;
+    border-radius: 30px;
     width: 100%;
     max-width: 500px;
     display: inline-block;
@@ -132,22 +139,23 @@ button.accent {
     margin-top: 10px;
 }
 
-
+/* chat page */
 #chat-page {
     position: relative;
     height: 100%;
 }
 
 .chat-container {
-    max-width: 700px;
+    max-width: 800px;
     margin-left: auto;
     margin-right: auto;
     background-color: #fff;
     box-shadow: 0 1px 11px rgba(0, 0, 0, 0.27);
-    margin-top: 30px;
+    margin-top: 70px;
     height: calc(100% - 60px);
-    max-height: 600px;
+    max-height: 700px;
     position: relative;
+    border-radius: 30px;
 }
 
 #chat-page ul {
@@ -218,10 +226,10 @@ button.accent {
     color: #43464b;
 }
 
+/* message form */
 #messageForm .input-group input {
     float: left;
-    /*width: calc(100% - 85px);*/
-     width: calc(100% - 180px);
+    width: calc(100% - 160px);
 }
 
 #messageForm .input-group button {
@@ -251,7 +259,68 @@ button.accent {
     width: 100%;
 }
 
+/* time string */
+.time {
+    font-size: 13px;
+    color: #73777d;
+    text-align: end;
+}
 
+.send-img {
+    max-width: 100%;
+    max-height: 300px;
+}
+
+/* input file */
+.input-file {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.input-file + label {
+    color: white;
+    display: inline-block;
+    background-color: #128ff2;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.12);
+    border: 1px solid transparent;
+    font-size: 14px;
+    outline: none;
+    line-height: 100%;
+    white-space: nowrap;
+    vertical-align: middle;
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    min-height: 38px;
+    min-width: 70px;
+}
+
+.input-file:focus + label,
+.input-file + label:hover {
+    background-color: #ff4743;
+}
+
+.input-file + label {
+    cursor: pointer;
+    float: right;
+    text-align: center;
+}
+
+.input-file:focus + label {
+    outline: 1px dotted #000;
+    outline: -webkit-focus-ring-color auto 5px;
+}
+
+.input-file + label:hover {
+    background-color: #ff4743;
+}
+
+/* media */
 @media screen and (max-width: 730px) {
 
     .chat-container {
@@ -297,53 +366,4 @@ button.accent {
         font-size: 1.1em;
     }
 }
-
-.time {
-  font-size: 13px;
-  color: #73777d;
-  text-align: end;
-}
-
-/* stickers form */
-.stickers-popup {
-  width: 300px;
-  display: none;
-  position: relative;
-  bottom: 170px;
-  left: 300px;
-  border: 3px solid #f1f1f1;
-  z-index: 9;
-}
-
-/* Добавить стили для контейнера формы */
-.form-container {
-  padding: 10px;
-  background-color: white;
-}
-
-.stickers-header {
-  display: flex;
-  justify-content: space-between;
-}
-
-.stickers-title {
-  font-size: 15px;
-}
-
-#close-btn {
-  font-size: 20px;
-  background-color: #fff;
-}
-
-.stickers-body {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.send-img {
-  max-width: 100%;
-  max-height: 300px;
-}
-
-
 

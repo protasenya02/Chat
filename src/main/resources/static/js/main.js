@@ -13,11 +13,14 @@ var stickerClose = document.querySelector('#close-btn');
 var stompClient = null;
 var username = null;
 
-var colors = [
+var avatarColors = [
     '#2196F3', '#32c787',
     '#00BCD4', '#ff5652',
     '#ffc107', '#ff85af',
-    '#FF9800', '#39bbb0'
+    '#FF9800', '#39bbb0',
+    '#97b1f3', '#f782e7',
+    '#addfee', '#b967ff',
+    '#ffdc73', '#eabec8',
 ];
 
 
@@ -221,7 +224,7 @@ function outputFileMessage(message) {
      image.classList.add('send-img');
      image.src = message.content;
      var imageWrapper = document.createElement('div');
-     wrapper.appendChild(image);
+     imageWrapper.appendChild(image);
      messageElement.appendChild(imageWrapper);
 
      // вывод времени сообщения
@@ -243,8 +246,8 @@ function getAvatarColor(messageSender) {
         hash = 31 * hash + messageSender.charCodeAt(i);
     }
 
-    var index = Math.abs(hash % colors.length);
-    return colors[index];
+    var index = Math.abs(hash % avatarColors.length);
+    return avatarColors[index];
 }
 
 
