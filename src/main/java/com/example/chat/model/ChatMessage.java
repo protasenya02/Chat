@@ -1,8 +1,5 @@
 package com.example.chat.model;
 
-import java.util.Date;
-
-
 public class ChatMessage {
     private MessageType type;
     private String content;

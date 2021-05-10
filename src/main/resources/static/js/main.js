@@ -1,17 +1,17 @@
 'use strict';
 
-var usernamePage = document.querySelector('#username-page');
-var chatPage = document.querySelector('#chat-page');
-var usernameForm = document.querySelector('#usernameForm');
-var messageForm = document.querySelector('#messageForm');
-var messageInput = document.querySelector('#message');
-var messageArea = document.querySelector('#messageArea');
-var connectingElement = document.querySelector('.connecting');
-var stickerButton = document.querySelector('#stickers-btn');
-var stickerClose = document.querySelector('#close-btn');
+const usernamePage = document.querySelector('#username-page');
+const chatPage = document.querySelector('#chat-page');
+const usernameForm = document.querySelector('#usernameForm');
+const messageForm = document.querySelector('#messageForm');
+const messageInput = document.querySelector('#message');
+const messageArea = document.querySelector('#messageArea');
+const connectingElement = document.querySelector('.connecting');
+const onlineUsersArea = document.querySelector('#online-users');
 
 var stompClient = null;
 var username = null;
+
 
 var avatarColors = [
     '#2196F3', '#32c787',
@@ -63,7 +63,6 @@ function onError(error) {
     connectingElement.textContent = 'Could not connect to WebSocket server. Please refresh this page to try again!';
     connectingElement.style.color = 'red';
 }
-
 
 function sendMessage(event) {
 
@@ -258,22 +257,6 @@ function getMessageTime() {
 
 usernameForm.addEventListener('submit', connect, true);
 messageForm.addEventListener('submit', sendMessage, true);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
